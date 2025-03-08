@@ -1,4 +1,4 @@
-package org.example.tomcatmemshell.servlet;
+package org.example.tomcatmemshell.Generic;
 
 import com.sun.org.apache.xalan.internal.xsltc.DOM;
 import com.sun.org.apache.xalan.internal.xsltc.TransletException;

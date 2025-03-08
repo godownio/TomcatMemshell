@@ -1,20 +1,7 @@
 package org.example.tomcatmemshell;
 
-import org.apache.catalina.Context;
-import org.apache.catalina.WebResourceRoot;
-import org.apache.catalina.core.ApplicationContext;
-import org.apache.catalina.core.ApplicationContextFacade;
-import org.apache.catalina.core.ApplicationFilterChain;
-import org.apache.catalina.core.StandardContext;
-import org.apache.catalina.loader.WebappClassLoaderBase;
-
 import java.io.*;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.*;
-import javax.servlet.annotation.*;
 
 public class HelloServlet extends HttpServlet {
     private String message;

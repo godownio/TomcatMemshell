@@ -1,4 +1,4 @@
-package org.example.tomcatmemshell.servlet;
+package org.example.tomcatmemshell.Generic;
 
 import com.sun.jmx.mbeanserver.NamedObject;
 import com.sun.jmx.mbeanserver.Repository;
