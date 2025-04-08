@@ -31,6 +31,13 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+          <groupId>me.jv7.tools</groupId>
+          <artifactId>josearcher</artifactId>
+          <version>1.0</version>
+          <scope>system</scope>
+          <systemPath>${project.basedir}/java-object-searcher-0.1.0-jar-with-dependencies.jar</systemPath>
+    </dependency>
+    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
       <version>${junit.version}</version>
