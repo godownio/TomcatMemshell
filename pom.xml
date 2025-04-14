@@ -49,6 +49,11 @@
           <version>8.5.56</version>
       </dependency>
       <dependency>
+          <groupId>org.apache.tomcat</groupId>
+          <artifactId>tomcat-websocket</artifactId>
+          <version>8.5.56</version>
+      </dependency>
+      <dependency>
           <groupId>commons-collections</groupId>
           <artifactId>commons-collections</artifactId>
           <version>3.2.1</version>

